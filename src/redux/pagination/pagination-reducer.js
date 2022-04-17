@@ -6,7 +6,7 @@ const currentPage = createReducer(1, {
     [paginationActions.currentPageSuccess]: (_, {payload}) => payload,
   });
 
-const perPage = createReducer(10, {
+const totalNumberUsers = createReducer(500, {
     [paginationActions.perPageSuccess]: (_, {payload}) => payload,
 });
 
@@ -16,6 +16,6 @@ const dataSize = createReducer("", {
 
 export default combineReducers({
     currentPage,
-    perPage,
+    totalNumberUsers,
     dataSize
   });

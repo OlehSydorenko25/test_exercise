@@ -1,3 +1,3 @@
 export const getCurrentPage = state => state.pagination.currentPage
-export const getPerPage = state => state.pagination.perPage
+export const getTotalNumberUsers = state => state.pagination.totalNumberUsers
 export const getdataSize = state => state.pagination.dataSize

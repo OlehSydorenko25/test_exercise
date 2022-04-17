@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import * as pagActions from '../../redux/pagination/pagination-actions'
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import * as pagActions from '../../redux/pagination/pagination-actions';
 
 export default function SelectDataSize () {
     const dispatch = useDispatch()
-    const [value, setValue] = useState("10")
+    const [value, setValue] = useState(10)
 
     useEffect(() => {
         dispatch(pagActions.dataSizeSuccess(value))
+        dispatch(pagActions.currentPageSuccess(1))
     }, [dispatch, value])
     
     return (

@@ -7,6 +7,9 @@ export const getUsersData = (currentPage, dataSize) => async dispatch => {
     dispatch(usersActions.fetchUsersRequest());
 
     try {
+        if(!currentPage || !dataSize) {
+            return
+        }
         const responce = await axios.get(`?results=${dataSize}&page=${currentPage}`)
         dispatch(usersActions.fetchUsersSuccess(responce.data.results))
     } catch (error) {
