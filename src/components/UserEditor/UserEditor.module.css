@@ -21,6 +21,7 @@
     background: #52228C;
     border-radius: 12px;
     margin-bottom: 73px;
+    cursor: pointer;
 }
 
 .blocks {
@@ -86,6 +87,7 @@
     border-radius: 12px;
     border: 0;
     background: #E33030;
+    cursor: pointer;
 }
 
 .container__input {
@@ -132,7 +134,8 @@
     width: 143px;
     border: 0;
     background: #52228C;
-    border-radius: 0 12px 12px 0 ;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
 }
 
 .btnUpdate {
@@ -146,5 +149,6 @@
     width: 143px;
     border: 0;
     background: #52228C;
-    border-radius: 0 12px 12px 0 ;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
 }
