@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import * as pagSelectors from '../../redux/pagination/pagination-selectors';
 import * as pagActions from '../../redux/pagination/pagination-actions';
-import createPages from '../../utils/pagesCreator'
-import './Pagination.css';
+import {createPages} from '../../utils/pagesCreator'
+import s from './Pagination.module.css';
 
 
 function Pagination() {
@@ -17,20 +17,21 @@ function Pagination() {
   createPages(pages, pagesCount, currentPage)
 
     return (
-      <div className='pagination'>
+      <div className={s.pagination}>
           {pages.map((page, index) => {
             return (<div 
               key={index} 
               onClick = {() => dispatch(pagActions.currentPageSuccess(page))}
-              className={currentPage === page ? 'current__page' : 'page'}>
+              className={currentPage === page ? s.current__page : s.page}>
               {page}
             </div>)
           })}
           {currentPage !== pagesCount
           &&
           <button
-          onClick = {() => dispatch(pagActions.currentPageSuccess(currentPage + 1))}
-          >NEXT PAGE &gt;</button>}
+          className={s.buttonNext}
+            onClick = {() => dispatch(pagActions.currentPageSuccess(currentPage + 1))}
+          >Next page &gt;</button>}
           
       </div>
     );

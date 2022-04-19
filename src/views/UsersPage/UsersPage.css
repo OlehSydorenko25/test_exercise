@@ -1,8 +1,0 @@
-.container {
-    display: flex;
-}
-
-.container .filter__container {
-    width: 50%;
-    border: 1px solid #000;
-}

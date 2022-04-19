@@ -1,0 +1,150 @@
+
+.contaier {
+    width: 695px;
+    margin: 75px auto;
+}
+
+.btnBack {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 48px;
+    border: 0;
+    background: #52228C;
+    border-radius: 12px;
+    margin-bottom: 73px;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.blcInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blcImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.blcImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    width: 200px;
+    text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    color: #121212;
+}
+
+.date {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #999;
+    margin-bottom: 49px;
+}
+
+.btnDelete {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 48px;
+    border-radius: 12px;
+    border: 0;
+    background: #E33030;
+}
+
+.container__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    border: 1px solid #52228C;
+    border-radius: 12px;
+}
+
+.label:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.input {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #121212;
+
+    border: 0;
+    margin: 12px;
+    border-radius: 12px;
+    width: 279px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.btnEdite {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+
+    width: 143px;
+    border: 0;
+    background: #52228C;
+    border-radius: 0 12px 12px 0 ;
+}
+
+.btnUpdate {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+
+    width: 143px;
+    border: 0;
+    background: #52228C;
+    border-radius: 0 12px 12px 0 ;
+}

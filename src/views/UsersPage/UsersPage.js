@@ -1,35 +1,21 @@
 
 import UsersList from '../../components/UsersList/UsersList';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import * as userOperations from '../../redux/users/users-operations';
-import * as pagSelectors from '../../redux/pagination/pagination-selectors';
 import Filter from '../../components/Filter/Filter';
-import './UsersPage.css'
+import s from './UsersPage.module.css'
 
-function UsersPage() {
-    const dispatch = useDispatch();
-    const currentPage = useSelector(pagSelectors.getCurrentPage)
-    const dataSize = useSelector(pagSelectors.getdataSize)
-
-    useEffect(() => {
-        dispatch(userOperations.getUsersData(currentPage, dataSize))
-    }, [dispatch, currentPage, dataSize])
-
+export default function UsersPage() {
   return (
     <>
-      <h1>Users Page</h1>
-      <div className='container'>
-        <div className='filter__container'>
+      <div className={s.container}>
+        <div >
+          <h2 className={s.title}>Filter</h2>
           <Filter />
         </div>
-        <div>
+        <div className={s.usserListContainer}>
+          <h2 className={s.title}>List of users</h2>
           <UsersList />
         </div>
       </div>
     </>
   );
 }
-
-
-export default UsersPage;

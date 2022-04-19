@@ -1,21 +1,23 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as pagActions from '../../redux/pagination/pagination-actions';
+import * as pagSelectors from '../../redux/pagination/pagination-selectors';
+import s from './SelectDataSize.module.css'
 
 export default function SelectDataSize () {
     const dispatch = useDispatch()
-    const [value, setValue] = useState(10)
+    const defaultValue = useSelector(pagSelectors.getdataSize)
 
-    useEffect(() => {
-        dispatch(pagActions.dataSizeSuccess(value))
+    const handleCahgeSelect = (e) => {
+        dispatch(pagActions.dataSizeSuccess(e.target.value))
         dispatch(pagActions.currentPageSuccess(1))
-    }, [dispatch, value])
+    }
     
     return (
-        <div>
+        <div className={s.blccangeSize}>
             <select
-            onChange={(e) => setValue(e.target.value)}
-            defaultValue={value}
+            className={s.select}
+            onChange={handleCahgeSelect}
+            defaultValue={defaultValue}
             >
                 <option value={10}>10</option>
                 <option value={50}>50</option>

@@ -1,4 +1,4 @@
-export default function createPages(pages, pagesCount, currentPage) {
+export function createPages(pages, pagesCount, currentPage) {
     if(pagesCount > 6) {
         if(currentPage > 3) {
             for (let i = currentPage-2; i <= currentPage+2; i++) {
@@ -20,3 +20,6 @@ export default function createPages(pages, pagesCount, currentPage) {
         }
     }
 }
+
+
+

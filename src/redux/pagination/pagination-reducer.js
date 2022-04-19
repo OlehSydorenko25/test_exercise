@@ -10,7 +10,7 @@ const totalNumberUsers = createReducer(500, {
     [paginationActions.perPageSuccess]: (_, {payload}) => payload,
 });
 
-const dataSize = createReducer("", {
+const dataSize = createReducer("5", {
     [paginationActions.dataSizeSuccess]: (_, {payload}) => payload,
 });
 
