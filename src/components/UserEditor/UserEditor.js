@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as usersOperations from '../../redux/users/users-operations';
@@ -29,6 +29,24 @@ export default function OneUserPage({}) {
   const [location, setLocation] = useState(data.location.city);
   const [address, setAddress] = useState(data.location.street.name);
   const [dateBirth, setDateBirth] = useState(birthDay);
+
+  const inputName = useRef();
+  const focusInputName = () => inputName.current.focus();
+
+  const inputEmail = useRef();
+  const focusInputEmail = () => inputEmail.current.focus();
+
+  const inputPhone = useRef();
+  const focusInputPhone = () => inputPhone.current.focus();
+
+  const inputLocation = useRef();
+  const focusInputLocation = () => inputLocation.current.focus();
+
+  const inputAddress = useRef();
+  const focusInputAddress = () => inputAddress.current.focus();
+
+  const inputDate = useRef();
+  const focusInputDate = () => inputDate.current.focus();
 
   const handleChangeName = () => {
     dispatch(usersOperations.changeName(name));
@@ -91,6 +109,7 @@ export default function OneUserPage({}) {
         <div className={s.container__input}>
           <label className={s.label}>
             <input
+              ref={inputName}
               className={s.input}
               type="text"
               value={name}
@@ -105,11 +124,17 @@ export default function OneUserPage({}) {
               />
             )}
             {data.name.first === name && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputName}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
           <label className={s.label}>
             <input
+              ref={inputEmail}
               className={s.input}
               type="text"
               value={email}
@@ -124,11 +149,17 @@ export default function OneUserPage({}) {
               />
             )}
             {data.email === email && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputEmail}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
           <label className={s.label}>
             <input
+              ref={inputPhone}
               className={s.input}
               type="text"
               value={phoneNumber}
@@ -143,11 +174,17 @@ export default function OneUserPage({}) {
               />
             )}
             {data.phone === phoneNumber && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputPhone}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
           <label className={s.label}>
             <input
+              ref={inputLocation}
               className={s.input}
               type="text"
               value={location}
@@ -162,11 +199,17 @@ export default function OneUserPage({}) {
               />
             )}
             {data.location.city === location && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputLocation}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
           <label className={s.label}>
             <input
+              ref={inputAddress}
               className={s.input}
               type="text"
               value={address}
@@ -181,11 +224,17 @@ export default function OneUserPage({}) {
               />
             )}
             {data.location.street.name === address && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputAddress}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
           <label className={s.label}>
             <input
+              ref={inputDate}
               className={s.input}
               type="text"
               value={dateBirth}
@@ -200,7 +249,12 @@ export default function OneUserPage({}) {
               />
             )}
             {birthDay === dateBirth && (
-              <input className={s.btnEdite} type="button" value="Edite" />
+              <input
+                onClick={focusInputDate}
+                className={s.btnEdite}
+                type="button"
+                value="Edite"
+              />
             )}
           </label>
         </div>
