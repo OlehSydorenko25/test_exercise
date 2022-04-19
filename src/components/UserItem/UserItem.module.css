@@ -6,9 +6,7 @@
     border-radius: 12px;
 }
 
-.item:not(:last-child) {
-    margin-bottom: 8px;
-}
+
 
 .imgBlc {
     width: 85px;
